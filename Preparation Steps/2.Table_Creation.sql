@@ -47,18 +47,18 @@ CREATE TABLE public.dailyIntensities_merged
 );
 
 -- Create heartrate table with a primary key and foreign keys
-CREATE TABLE public.heartrate
+CREATE TABLE public.heartrate_cleaned
 (
     Id BIGINT,
     Day TIMESTAMP,
-    Hour TIMESTAMP,
-    PRIMARY KEY (Id, Day),
+    Hour TIME,
+    PRIMARY KEY (Id, Hour),
     Value INT,
     FOREIGN KEY (Id, Day) REFERENCES public.dailyActivity_merged (Id, ActivityDate)
 );
 
 -- Create public.sleepDay table with a primary key and foreign keys
-CREATE TABLE public.sleepDay
+CREATE TABLE public.sleepDay_cleaned
 (
     Id BIGINT,
     SleepDay TIMESTAMP,
@@ -73,11 +73,11 @@ CREATE TABLE public.sleepDay
 ALTER TABLE public.dailyActivity_merged OWNER to postgres;
 ALTER TABLE public.dailyCalories_merged OWNER to postgres;
 ALTER TABLE public.dailyIntensities_merged OWNER to postgres;
-ALTER TABLE public.heartrate OWNER to postgres;
-ALTER TABLE public.sleepDay OWNER to postgres;
+ALTER TABLE public.heartrate_cleaned OWNER to postgres;
+ALTER TABLE public.sleepDay_cleaned OWNER to postgres;
 
 -- Create indexes on foreign key columns for better performance
 CREATE INDEX idx_Calories_id ON public.dailyCalories_merged (Id, ActivityDay);
 CREATE INDEX idx_Intensities_id ON public.dailyIntensities_merged (Id, ActivityDay);
-CREATE INDEX idx_heartrate_id ON public.heartrate (Id, Day);
-CREATE INDEX idx_sleep_id ON public.sleepDay (Id, SleepDay);
+CREATE INDEX idx_heartrate_id ON public.heartrate_cleaned (Id, Day);
+CREATE INDEX idx_sleep_id ON public.sleepDay_cleaned (Id, SleepDay);
