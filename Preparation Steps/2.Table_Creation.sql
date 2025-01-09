@@ -52,7 +52,7 @@ CREATE TABLE public.avgheartrate
     Id BIGINT,
     Day TIMESTAMP,
     PRIMARY KEY (Id, Day),
-    Value INT,
+    Value NUMERIC,
     FOREIGN KEY (Id, Day) REFERENCES public.dailyActivity_merged (Id, ActivityDate)
 );
 
