@@ -433,7 +433,7 @@ As we conclude this project, I would like to provide my insights and recommendat
 
 To preface, Bellabeat primarily focus on a female audience for their target market, as such the data provided may not entirely be suitable, especially in consideration of the data sample size and target or rather lack thereof, to create suitable insights and recommendations for supporting the advancement of their product line. Therefore, we heavily believe that any internal studies and research conducted by Bellabeat would be much more beneficial to them, as we currently can not guarantee there are not any sampling bias or the correct demographic has been chosen.
 
-With that said, I would like to revisit our initial questions to share what we have uncovered.
+With that said, I would like to revisit our initial questions to share what we have uncovered:
 
 1. What are the trends and health of the users of non-Bellabeat products?
 
